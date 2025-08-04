@@ -1,3 +1,15 @@
 # Feature Learning from Image Markers meets Cellular Automata
 
 This repository contains the source code and experimental materials for the Master's thesis **"Feature Learning from Image Markers meets Cellular Automata"** by Felipe Crispim da Rocha Salvagnini, supervised by Prof. Dr. Alexandre Xavier Falcão at the Institute of Computing, University of Campinas (UNICAMP).
+
+![Multi-Level Cellular Automata for $L$-Layer FLIM networks.](miscellaneous/images/flim_ca_framework.png)
+
+> This document aims to release the method developed during the Master's Degree of Felipe Crispim da Rocha Salvagnini, in a self-contained fashion, so one can validate it using our training images and employ it towards different problems.
+
+> **DISCLAIMER:** Docker container uses CUDA. If you do not have a GPU, just use Cellular Automata and training/inference on CPU (for the merge model)
+
+____
+
+## Abstract
+
+Deep learning approaches typically require extensive annotated datasets and increasingly complex network architectures. This paradigm presents significant challenges in resource-constrained environments, particularly for medical applications in developing countries where data annotation is costly and computational resources are limited. Additionally, many real-world problems, such as detecting Schistosoma mansoni eggs, involve fewer categories than general computer vision tasks, suggesting that simplified approaches may be viable. The Feature Learning from Image Markers (FLIM) methodology enables experts to design convolutional encoders directly from image patches, providing control over encoder complexity. Integrating an adaptive decoder with a FLIM encoder creates networks that eliminate the need for backpropagation and substantially reduce annotation requirements (typically to only 3-4 images). Combining FLIM networks with Cellular Automata (CA) creates a comprehensive pipeline for exploring object detection (or segmentation) on images. The CA works as a post-processing technique; moreover, FLIM facilitates the CA initialization, leveraging user knowledge without requiring per-image user interaction. Therefore, this MSc thesis aims to explore the integration of FLIM networks into the initialization of CA. We evaluate the FLIM-CA framework for salient object detection towards two challenging medical datasets: the detection of S. mansoni eggs in optical microscopy images and brain tumor detection in magnetic resonance imaging data. Our results demonstrate competitive performance compared to convolutional deep learning methods, with improvements of up to 13\% to 20\% on metrics such as F-Score and uWF, using only a fraction of the parameters (thousands vs. millions). Finally, we present a multi-level FLIM-CA to explore the convolutional encoder's hierarchical representation at each level, where intermediary saliency maps initialize corresponding CAs, and the outputs of CAs are merged into a final, improved saliency map. Our work proposes a multi-level FLIM-CA system that builds upon the hierarchical capabilities of FLIM encoders.
