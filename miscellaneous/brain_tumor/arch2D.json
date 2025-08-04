@@ -1,0 +1,89 @@
+{
+    "apply_intrinsic_atrous": false,
+    "layer1": {
+        "conv": {
+            "dilation_rate": [
+                1,
+                1,
+                0
+            ],
+            "kernel_size": [
+                3,
+                3,
+                0
+            ],
+            "nkernels_per_image": 200,
+            "nkernels_per_marker": 4,
+            "noutput_channels": 200,
+            "stride": 1
+        },
+        "pooling": {
+            "size": [
+                3,
+                3,
+                0
+            ],
+            "stride": 2,
+            "type": "max_pool"
+        },
+        "relu": true
+    },
+    "layer2": {
+        "conv": {
+            "dilation_rate": [
+                1,
+                1,
+                0
+            ],
+            "kernel_size": [
+                3,
+                3,
+                0
+            ],
+            "nkernels_per_image": 200,
+            "nkernels_per_marker": 4,
+            "noutput_channels": 200,
+            "stride": 1
+        },
+        "pooling": {
+            "size": [
+                3,
+                3,
+                0
+            ],
+            "stride": 1,
+            "type": "max_pool"
+        },
+        "relu": true
+    },
+    "layer3": {
+        "conv": {
+            "dilation_rate": [
+                1,
+                1,
+                0
+            ],
+            "kernel_size": [
+                3,
+                3,
+                0
+            ],
+            "nkernels_per_image": 200,
+            "nkernels_per_marker": 4,
+            "noutput_channels": 200,
+            "stride": 1
+        },
+        "pooling": {
+            "size": [
+                3,
+                3,
+                0
+            ],
+            "stride": 1,
+            "type": "max_pool"
+        },
+        "relu": true
+    },
+    "nlayers": 3,
+    "stdev_factor": 0.01
+}
