@@ -2,7 +2,9 @@
 
 This repository contains the source code and experimental materials for the Master's thesis **"Feature Learning from Image Markers meets Cellular Automata"** by Felipe Crispim da Rocha Salvagnini, supervised by Prof. Dr. Alexandre Xavier Falcão at the Institute of Computing, University of Campinas (UNICAMP).
 
-![Multi-Level Cellular Automata for $L$-Layer FLIM networks.](miscellaneous/images/flim_ca_framework.png)
+![Multi-Level Cellular Automata for L-Layer FLIM networks.](miscellaneous/images/flim_ca_framework.png)
+
+<p align="center"><i>Figure 1: Multi-Level Cellular Automata for L-Layer FLIM networks.</i></p>
 
 > This document aims to release the method developed during the Master's Degree of Felipe Crispim da Rocha Salvagnini, in a self-contained fashion, so one can validate it using our training images and employ it towards different problems.
 
