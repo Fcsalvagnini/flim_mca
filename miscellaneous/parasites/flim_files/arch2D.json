@@ -1,0 +1,65 @@
+{
+	"stdev_factor": 0.010000,
+	"nlayers": 4,
+	"apply_intrinsic_atrous": false,
+	"layer1": {
+		"conv": {
+			"kernel_size": [3, 3, 0],
+			"nkernels_per_marker": 3,
+			"dilation_rate": [1, 1, 0],
+			"nkernels_per_image": 10000,
+			"noutput_channels": 200
+		},
+		"relu": true,
+		"pooling": {
+			"type": "avg_pool",
+			"size": [3, 3, 0],
+			"stride": 2
+		}
+	},
+	"layer2": {
+		"conv": {
+			"kernel_size": [3, 3, 0],
+			"nkernels_per_marker": 3,
+			"dilation_rate": [1, 1, 0],
+			"nkernels_per_image": 10000,
+			"noutput_channels": 200
+		},
+		"relu": true,
+		"pooling": {
+			"type": "avg_pool",
+			"size": [3, 3, 0],
+			"stride": 2
+		}
+	},
+	"layer3": {
+		"conv": {
+			"kernel_size": [3, 3, 0],
+			"nkernels_per_marker": 3,
+			"dilation_rate": [1, 1, 0],
+			"nkernels_per_image": 10000,
+			"noutput_channels": 200
+		},
+		"relu": true,
+		"pooling": {
+			"type": "avg_pool",
+			"size": [3, 3, 0],
+			"stride": 1
+		}
+	},
+	"layer4": {
+		"conv": {
+			"kernel_size": [3, 3, 0],
+			"nkernels_per_marker": 3,
+			"dilation_rate": [1, 1, 0],
+			"nkernels_per_image": 10000,
+			"noutput_channels": 200
+		},
+		"relu": true,
+		"pooling": {
+			"type": "avg_pool",
+			"size": [3, 3, 0],
+			"stride": 1
+		}
+	}
+}
