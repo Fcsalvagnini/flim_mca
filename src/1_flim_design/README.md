@@ -1,0 +1,1 @@
+# FLIM design phase: Designing a FLIM Convolutional Encoder

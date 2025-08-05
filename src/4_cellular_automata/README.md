@@ -1,0 +1,1 @@
+# FLIM CA Integration: Initialize multiple CAs and evolve them until convergence

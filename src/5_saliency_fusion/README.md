@@ -1,0 +1,1 @@
+# Saliency Fusion: Train a straightforward network to merge multi-level saliency maps into a better unified saliency map

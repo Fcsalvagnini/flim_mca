@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  flim_mca:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        USER_NAME: ${USER_NAME:-developer}
+        USER_ID: ${USER_ID:-1000}
+        GROUP_ID: ${GROUP_ID:-1000}
+
+    container_name: flim_mca
+    image: flim_mca
+    restart: unless-stopped
+
+    # Logging configuration
+    logging:
+      driver: json-file
+      options:
+        max-size: 50m
+
+    volumes:
+      - ../:/workdir/
+
+    # Ensure the container runs as the created user
+    user: "${USER_ID:-1000}:${GROUP_ID:-1000}"
+
+    command: tail -f /dev/null
+
+    # Optional: Set environment variables
+    environment:
+      - HOME=/home/${USER_NAME:-developer}
