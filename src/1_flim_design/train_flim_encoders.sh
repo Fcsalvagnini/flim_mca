@@ -1,11 +1,11 @@
 #!/bin/bash
-FLIM_FILES=$1
-EXPERIMENT=$(basename "$FLIM_FILES")
+INPUT_FOLDER=$1
+EXPERIMENT=$(basename "$INPUT_FOLDER")
 
-ARCHITECTURE_FILE=$FLIM_FILES/arch2D.json
+ARCHITECTURE_FILE=$INPUT_FOLDER/arch2D.json
 for SPLIT in split1 split2 split3; do
   # Current split directory (split1, split2, or split3)
-  SPLIT_PATH=$FLIM_FILES/$SPLIT/
+  SPLIT_PATH=$INPUT_FOLDER/$SPLIT/
   # Path to sample training images
   ORIG_FOLDER=$SPLIT_PATH/train_samples/orig
   # Path for markers. Each training image has an associate marker file,

@@ -2,7 +2,7 @@
 
 As the first step of our pipeline, we must learn the FLIM encoder. Follow the two steps below:
 
-1. Compile the iftFLIM-LearnModel.c code `./compile.sh 1` for GPU support or `./compile.sh 0` for CPU;
+1. Compile the `iftFLIM-LearnModel.c` code `./compile.sh 1` for GPU support or `./compile.sh 0` for CPU;
 2. Generate the FLIM-Encoder, using the sample training images. Run the `train_flim_encoders.sh` script:
 
 ```bash
@@ -12,7 +12,7 @@ As the first step of our pipeline, we must learn the FLIM encoder. Follow the tw
 ./train_flim_encoders.sh /workdir/miscellaneous/brain_tumor/
 ```
 
-The script calls the iftFLIM-LearnModel executable, with the following arguments:
+The script calls the `iftFLIM-LearnModel` executable, with the following arguments:
 
 1. The FLIM encoder architecture (specified through a json file);
 2. The folder with the input images (e.g., colored or gray-scale images of our problem);
