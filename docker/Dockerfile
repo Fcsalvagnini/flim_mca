@@ -5,14 +5,18 @@ ENV LANG=C.UTF-8
 ENV LC_ALL=C.UTF-8
 ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
 
-# Install system dependencies
+# Install system dependencies - Force Python 3.11 for compatibility
 RUN apt update && apt upgrade -y \
+  && apt install -y software-properties-common \
+  && add-apt-repository ppa:deadsnakes/ppa \
+  && apt update \
   && apt install -y \
     libopenblas-dev libsvm-dev liblapack-dev libblas-dev \
-    sudo \
+    sudo python3.11 python3.11-distutils git curl \
   && rm -rf /var/lib/apt/lists/*
 
-# Download libift.so and compile code to learn FLIM Model and Extract Features
+# Installs pip manualy
+RUN curl https://bootstrap.pypa.io/get-pip.py | python3.11
 
 # Define build arguments for user creation
 ARG USER_NAME=developer
@@ -32,6 +36,8 @@ RUN mkdir -p ${WORKDIR} \
 
 # Add custom binary path to PATH
 ENV PATH="/workdir/lib_flim_mca/bin:$PATH"
+# Add local bin to PATH for user-installed packages
+ENV PATH="/home/${USER_NAME}/.local/bin:$PATH"
 
 # Switch to non-root user
 USER ${USER_NAME}

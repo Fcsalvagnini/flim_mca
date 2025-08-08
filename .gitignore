@@ -3,3 +3,4 @@ out/
 .env
 lib_flim_mca/bin
 lib_flim_mca/lib
+get-pip.py

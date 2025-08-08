@@ -32,10 +32,10 @@ for SPLIT in split1 split2 split3; do
         FILE_LIST=$SPLIT_PATH/sample.csv
     else
         PREV_LAYER=$((LAYER-1))
-        ORIG_FOLDER=/workdir/out/$EXPERIMENT/$SPLIT/validation_features/layer_$PREV_LAYER/
+        ORIG_FOLDER=/workdir/out/$EXPERIMENT/$SPLIT/sample_features/layer_$PREV_LAYER/
         FILE_LIST=$SPLIT_PATH/samplem.csv
     fi
-    OUT_FOLDER=/workdir/out/$EXPERIMENT/$SPLIT/validation_features/layer_$LAYER/
+    OUT_FOLDER=/workdir/out/$EXPERIMENT/$SPLIT/sample_features/layer_$LAYER/
 
     # Run FLIM feature extraction command
     iftFLIM-ExtractFeaturesFromLayer $ARCHITECTURE_FILE $ORIG_FOLDER \
