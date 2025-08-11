@@ -38,7 +38,7 @@ if __name__ == "__main__":
     for layer in layer_folders:
       layer_path = features_path / layer
       images = os.listdir(layer_path)
-      
+
       sample_image = ift.ReadMImage(str(layer_path / images[0])).AsNumPy()
       ch = sample_image.shape[-1]
       decoder = layers.FLIMAdaptiveDecoderLayer(
@@ -59,7 +59,7 @@ if __name__ == "__main__":
         mimg_tensor = mimg_tensor.clone().to(device).permute(0, 3, 1, 2)
         saliency = decoder(mimg_tensor)
         saliency = saliency.squeeze().detach().numpy().astype(np.uint8)
-        
+
         img_saving_path = saving_path / img.replace("mimg", "png")
         io.imsave(img_saving_path, saliency, check_contrast=False)
 
