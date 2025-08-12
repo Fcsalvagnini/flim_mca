@@ -756,7 +756,7 @@ int main(int argc, char **argv) {
         iftImage *output_fg = iftFImageToImage(ca_model->fg_strength, ca_model->i_max);
         iftImage *output_bg = iftFImageToImage(ca_model->bg_strength, ca_model->i_max);
 
-        // 4. Saves foreground, background, and prob_tumor.
+        // Saves foreground, background, and prob_tumor.
         sprintf(output_path, "%s/%s_%s%s", argv[4], img_basename, "prob_map", ext);
         iftWriteImageByExt(output_prob_map, output_path);
         sprintf(output_path, "%s/%s_%s%s", argv[4], img_basename, "fg", ext);
@@ -769,7 +769,7 @@ int main(int argc, char **argv) {
         }
         iftWriteImageByExt(ca_model->label, output_path);
 
-        // 5. Computes final saliency
+        // 4. Computes final saliency
         clock_gettime(CLOCK_MONOTONIC, &start);
         iftImage *output_saliency = NULL;
         if (!is_brain) {

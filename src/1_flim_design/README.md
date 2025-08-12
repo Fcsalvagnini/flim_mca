@@ -20,7 +20,7 @@ The script calls the `iftFLIM-LearnModel` executable, with the following argumen
 4. Output folder, where the weights of the FLIM convolutional encoder will be saved:
    - For parasite eggs: `/workdir/out/parasites/splitN/flim_model/`
    - For brain tumors: `/workdir/out/brain_tumor/splitN/flim_model/`
-   
+
  Where `N` represents the split number (e.g., split0, split1, split2).
 
 > Models are learned for each split.
