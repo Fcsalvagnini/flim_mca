@@ -696,9 +696,7 @@ int main(int argc, char **argv) {
     struct timespec start, end;
     double initialization=0,evolution=0,get_prob_map=0,extract_sal=0;
 
-    size_t i = 0;
-    for (size_t idx=0; idx < (2 * fs->n); idx++) {
-        i = idx % fs->n;
+    for (size_t i=0; i < fs->n; i++) {
         char *img_basename = iftFilename(fs->files[i]->path, ".png");
         printf("Processing Image: %s\n", img_basename);
         sprintf(orig_path, "%s/%s.png", argv[2], img_basename);

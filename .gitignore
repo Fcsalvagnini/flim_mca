@@ -4,3 +4,5 @@ out/
 lib_flim_mca/bin
 lib_flim_mca/lib
 get-pip.py
+timing_results.csv
+timing_results_gpu.csv
