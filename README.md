@@ -54,13 +54,33 @@ As visualized in **Figure 1**, our method is composed of multiple steps, which w
 2. [FLIM feature extraction: Extract features using the learned FLIM Convolutional Encoder](src/2_feature_extraction/README.md)
 3. [FLIM feature decodification: Adaptively Decode a saliency map from FLIM's extracted features](src/3_decoding/README.md)
 4. [FLIM CA Integration: Initialize multiple CAs and evolve them until convergence](src/4_cellular_automata/README.md)
-5. [Saliency Fusion: Train a straightforward network to merge multi-level saliency maps into a better unified saliency map](src/5_saliency_fusion/README.md)
+5. [Saliency Fusion: Train a lightweight fusion network to combine multi-level cellular automata-enhanced saliency maps](src/5_saliency_fusion/README.md)
 
 > Despite working with FLIM Network Saliency Maps (FLIM Encoder + Adaptive Decoder), the proposed pipeline may be evaluated on different approaches with multi-level saliency maps. We are investigating adapting our pipeline towards deep-learning methods when few training images are available, which is a limitation currently.
 
 > We employ the libift (Image Foresting Transform Library) released at (`lib_flim_mca/`) compiled for CPU (`lib_cpu.tar.gz`) or GPU (`lib_gpu.tar.gz`). If you want to explore the Feature Learning From Image Markers methodology to design convolutional encoders, we strongly recommend that you examine the repository from our laboratory: [FLIM-Python](https://github.com/LIDS-UNICAMP/flim-python-demo).
 
-## Quick Start
+## Quick Start - With Docker
+
+All files are located in the docker folder.
+
+> **Expected workflow:** Design → Extract → Decode → CA Evolution → Fusion
+
+### Pre-built Container (Recommended)
+
+For immediate usage, we provide a pre-configured Docker image with all dependencies and compiled libraries:
+
+```bash
+# Run setup
+./quick_setup.sh
+
+# Access container
+docker exec -it flim_mca bash
+```
+
+### Manual Build (For Development)
+
+If you need to modify the environment or understand the complete setup:
 
 1. Clone the repository
 2. If necessary, install Docker and Docker Compose. To get the most out of our method, please test it using a computer with a GPU.
@@ -71,7 +91,30 @@ As visualized in **Figure 1**, our method is composed of multiple steps, which w
 3. Follow the step-by-step pipeline in the `src/` folder
 4. Start with [FLIM design phase](src/1_flim_design/README.md)
 
-> **Expected workflow:** Design → Extract → Decode → CA Evolution → Fusion
+## System Requirements
+
+- Docker with GPU support
+- NVIDIA Container Toolkit
+- CUDA-compatible GPU
+- 8GB+ RAM recommended
+
+## Container Features
+
+- **Base**: NVIDIA CUDA 12.8.1 with cuDNN
+- **Python**: 3.11 with scientific computing stack
+- **Pre-installed**: All FLIM-MCA dependencies and compiled libraries
+- **User permissions**: Automatic host user mapping
+- **GPU access**: Full CUDA acceleration support
+
+## Contact
+
+**Author**: Felipe Crispim da Rocha Salvagnini
+**Email**: felipe.salvagnini@students.ic.unicamp.br
+**Institution**: Institute of Computing (IC), University of Campinas (UNICAMP)
+**Advisor**: Prof. Dr. Alexandre Xavier Falcão
+
+**Laboratory**: Laboratory of Image Data Science (LIDS)
+**Website**: https://www.lids.ic.unicamp.br/
 
 ## Citation
 

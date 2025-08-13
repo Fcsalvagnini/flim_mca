@@ -6,3 +6,6 @@ lib_flim_mca/lib
 get-pip.py
 timing_results.csv
 timing_results_gpu.csv
+*.pyc
+.gitignore
+settings.json

@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  flim_mca:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+    image: fcsalvagnini/flim-mca:latest
+    container_name: flim_mca
+    restart: unless-stopped
+
+    logging:
+      driver: json-file
+      options:
+        max-size: 50m
+
+    volumes:
+      - ../:/workdir/
+
+    user: "${USER_ID:-1000}:${GROUP_ID:-1000}"
+    command: tail -f /dev/null
+
+    environment:
+      - HOME=/home/${USER_NAME:-developer}
