@@ -19,7 +19,7 @@ RUN apt update && apt upgrade -y \
 RUN curl https://bootstrap.pypa.io/get-pip.py | python3.11
 
 # Define build arguments for user creation
-ARG USER_NAME=developer
+ARG USER_NAME=flim_ca
 ARG USER_ID=1000
 ARG GROUP_ID=1000
 

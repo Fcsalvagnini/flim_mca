@@ -14,7 +14,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
       args:
-        USER_NAME: ${USER_NAME:-developer}
+        USER_NAME: flim_ca
         USER_ID: ${USER_ID:-1000}
         GROUP_ID: ${GROUP_ID:-1000}
 
@@ -38,4 +38,4 @@ services:
 
     # Optional: Set environment variables
     environment:
-      - HOME=/home/${USER_NAME:-developer}
+      - HOME=/home/flim_ca

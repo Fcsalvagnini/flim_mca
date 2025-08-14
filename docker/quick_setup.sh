@@ -4,12 +4,13 @@ echo "Setting up FLIM-MCA Docker environment..."
 
 # Create .env file with current user's UID and GID
 cat > .env << EOF
-USER_NAME=$(whoami)
+USER_NAME=flim_ca
 USER_ID=$(id -u)
 GROUP_ID=$(id -g)
 EOF
 
 echo "Created .env file with your user permissions"
+echo "Container will use username 'flim_ca' but maintain your file permissions"
 echo "Starting FLIM-MCA container..."
 
 docker-compose -f docker-compose.public.yml up -d

@@ -26,4 +26,4 @@ services:
     command: tail -f /dev/null
 
     environment:
-      - HOME=/home/${USER_NAME:-developer}
+      - HOME=/home/flim_ca

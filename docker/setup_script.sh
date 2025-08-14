@@ -4,7 +4,7 @@
 echo "Creating .env file with current user permissions..."
 
 cat > .env << EOF
-USER_NAME=$(whoami)
+USER_NAME=flim_ca
 USER_ID=$(id -u)
 GROUP_ID=$(id -g)
 EOF

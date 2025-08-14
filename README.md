@@ -109,11 +109,15 @@ If you need to modify the environment or understand the complete setup:
 ## Contact
 
 **Author**: Felipe Crispim da Rocha Salvagnini
+
 **Email**: felipe.salvagnini@students.ic.unicamp.br
+
 **Institution**: Institute of Computing (IC), University of Campinas (UNICAMP)
+
 **Advisor**: Prof. Dr. Alexandre Xavier Falcão
 
 **Laboratory**: Laboratory of Image Data Science (LIDS)
+
 **Website**: https://www.lids.ic.unicamp.br/
 
 ## Citation
